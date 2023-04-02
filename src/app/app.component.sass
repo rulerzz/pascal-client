@@ -1,0 +1,42 @@
+.flex-container
+    display: flex
+    flex-direction: row
+    height: 100vh
+    padding-bottom: 1rem
+app-sidebar
+    width: 4rem
+    border-right: 1px solid #333135
+app-workspace
+    flex: 1
+    border-left: 1px solid #333135
+app-footer
+    width: 100%
+    height: 1rem
+    position: absolute
+    bottom: 0
+    left: 0
+    background: #3682fa
+.main-container
+    width: calc( 100% - 4rem )
+    display: flex
+    flex-direction: row
+    aside
+      flex: none
+      min-width: 0px
+      width: 250px
+.container-fluid
+    position: relative
+    background: #2d2a2e
+.resize-handle--x
+    flex: none
+    position: relative
+    box-sizing: border-box
+    width: 5px
+    height: 100%
+    cursor: col-resize
+    transition: 0.5s
+    &:hover,
+    &:active
+      background: #3682fa
+
+
