@@ -1,5 +1,6 @@
 import {
   Component,
+  Input,
   OnInit,
 } from '@angular/core';
 
@@ -9,6 +10,8 @@ import {
   styleUrls: ['./explorer.component.sass'],
 })
 export class ExplorerComponent implements OnInit {
+
+  @Input('explorerActivePanel') explorerActivePanel: any;
 
   constructor() {}
 

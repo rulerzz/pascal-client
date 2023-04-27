@@ -1,8 +1,8 @@
 <div class="container-fluid p-0">
   <div class="flex-container">
-    <app-sidebar></app-sidebar>
+    <app-sidebar (changeExplorerContent)="changeExplorerContent($event)"></app-sidebar>
     <div class="main-container" (mousemove)="mousemove($event)" (mouseup)="mouseup($event)">
-      <aside id="sidebar" #sidebar><app-explorer></app-explorer></aside>
+      <aside id="explorer" #explorer><app-explorer [explorerActivePanel]="explorerActivePanel"></app-explorer></aside>
       <div class="resize-handle--x" id="resize-handle" data-target="aside" (mousedown)="resize($event)"></div>
       <app-workspace></app-workspace>
     </div>

@@ -1,6 +1,32 @@
-<div
-  class="container container-resize"
->
-  <h1>ashjkdshk</h1>
-
+<div class="container-fluid">
+  <ng-container *ngIf="explorerActivePanel === 'home'">
+    <div class="row">
+      <div class="col-6">
+        <span class="header">Explorer</span>
+      </div>
+      <div class="col-6">
+        <div class="dropdown">
+          <button class="btn selector btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span>...</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12">
+        <span class="heading-2">You have not yet opened a folder.</span>
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary button-open" type="button">Open Folder</button>
+          <button class="btn btn-primary button-open" type="button">Open Recent</button>
+        </div>
+        <span class="heading-3">You can open a remote repository or pull request without cloning.</span>
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary button-open" type="button">Open Remote Repository</button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
 </div>

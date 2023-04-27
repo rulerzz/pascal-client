@@ -1,1 +1,23 @@
+@import './assets/sass/main'
+
 /* You can add global styles to this file, and also import other style files */
+
+html
+  @include generateThemeVariables
+
+body
+  @include theme(background-color, background)
+
+app-footer
+  @include theme(background-color, footer)
+
+.resize-handle--x
+    &:hover,
+    &:active
+      @include theme(background-color, footer)
+
+app-workspace
+  @include theme(border-left, border, 1px solid)
+
+app-sidebar
+  @include theme(border-right, border, 1px solid)

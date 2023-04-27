@@ -1,1 +1,8 @@
-<p>sidebar works!</p>
+<div class="flex-container">
+    <div class="icon-container"  *ngFor="let icon of icons; let i = index">
+      <button mat-button [ngClass]="i === 0 ? 'active' : 'gray'" (click)="emitClicked(icon)">
+        <mat-icon aria-hidden="false" fontIcon="menu" fontIcon="{{icon}}" class="gray">
+        </mat-icon>
+      </button>
+    </div>
+</div>
