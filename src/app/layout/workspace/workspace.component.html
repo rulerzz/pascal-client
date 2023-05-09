@@ -1,2 +1,26 @@
-<p>workspace works!</p>
-<h1>jashdjkashjk</h1>
+<div class="container-fluid p-0" (click)="createTemporaryFile($event)" (dblclick)="createNewFile('Untitled')">
+  <app-status [activeView]="currentActiveView" [files]="files" (popFile)="popFile($event)" (createNewFile)="createNewFile($event)" (ViewFile)="viewFile($event)"></app-status>
+  <div class="container-fluid p-0 files-container" *ngIf="files.length > 0">
+      <ng-container *ngIf="currentActiveView === 'Welcome' else newDeb">
+        <!-- welcome code -->
+        <app-welcome></app-welcome>
+      </ng-container>
+      <ng-template #newDeb>
+        <!-- other than welcome -->
+        <ng-container *ngFor="let file of files">
+            <div class="editor-container" *ngIf="file.name === currentActiveView && file.name !== 'Welcome'">
+            <ngs-code-editor
+              [theme]="theme"
+              [codeModel]="{
+                language: file.language,
+                uri: file.name + file.extension,
+                value: file.data
+              }"
+              [options]="options"
+              (valueChanged)="onCodeChanged($event)">
+            </ngs-code-editor>
+          </div>
+        </ng-container>
+      </ng-template>
+  </div>
+</div>

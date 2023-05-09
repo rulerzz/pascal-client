@@ -1,0 +1,10 @@
+<div class="container-fluid p-0 status-container" (dblclick)="createNewFileEvent($event)" >
+  <ng-container *ngFor="let file of files">
+    <div class="status-context" [ngClass]="activeView === file.name ? 'active': ''" (click)="viewContentsOf(file.name)">
+      <span>{{file.name}}</span>
+      <button (click)="removeFile(file.name)">
+        x
+        </button>
+    </div>
+  </ng-container>
+</div>

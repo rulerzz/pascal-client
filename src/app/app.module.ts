@@ -9,14 +9,19 @@ import { WorkspaceComponent } from './layout/workspace/workspace.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material/material.module';
 import { ExplorerModule } from './layout/explorer/explorer.module';
+import { WelcomeComponent } from './layout/welcome/welcome.component';
+import { StatusComponent } from './layout/status/status.component';
+import { CodeEditorModule } from '@ngstack/code-editor';
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     FooterComponent,
     WorkspaceComponent,
+    WelcomeComponent,
+    StatusComponent,
   ],
-  imports: [ ExplorerModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule],
+  imports: [ ExplorerModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, CodeEditorModule.forRoot()],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
