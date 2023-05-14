@@ -9,4 +9,124 @@
     <li><a href="#">Open Folder</a></li>
     <li><a href="#">Open Repository</a></li>
   </ul>
+  <!-- Example 1 BINDING TO A CLASS VARIABLE -->
+  <!-- <input type="text" [value]="inputField"> -->
+  <!-- Example 2 USING TEMPLATE VARIABLE -->
+  <!-- <input #phone placeholder="phone number" class="class1 class2" data-ltr="true"/>
+  <button (click)="log(phone.getAttribute('data-ltr'))">Button</button> -->
+  <!-- USING NGFORM -->
+  <!-- <form (submit)="onSubmit($event)">name
+    <label for="name">Name</label>
+    <input type="text"  class="form-control" placeholder="text" name="name" [(ngModel)]="name" required />
+    <input type="email"  class="form-control" placeholder="email" name="email" ngModel required />
+    <input type="password"  class="form-control"  placeholder="password" name="password" ngModel required />
+    <input type="file"  class="form-control"  placeholder="file" name="file" ngModel required />
+    <input type="checkbox"  placeholder="checkbox" name="checkbox" ngModel required value="Enabled"/>
+    <label for="" style="color: white">Enabled?</label>
+    <input type="color"  class="form-control" placeholder="color" name="color" ngModel required />
+    <input type="date"  class="form-control" placeholder="date"  name="date"ngModel required />
+    <input type="hidden"  class="form-control" placeholder="hidden" name="hidden" ngModel required />
+    <input type="number"  class="form-control" placeholder="number"  name="number" ngModel required />
+    <input type="radio"  name="radio" ngModel required value="opt11"/>
+    <label for="" style="color: white">Opt11 </label>
+    <input type="radio"  name="radio" ngModel required value="opt22"/>
+    <label for="" style="color: white">Opt22 </label>
+    <input type="radio"  name="radio" ngModel required value="opt33" />
+    <label for="" style="color: white">Opt33</label> -->
+    <!--
+      @property {boolean} $untouched True if control has not lost focus yet.
+      @property {boolean} $touched True if control has lost focus.
+      @property {boolean} $pristine True if user has not interacted with the control yet.
+      @property {boolean} $dirty True if user has already interacted with the control.
+     -->
+    <!-- <button type="submit">Submit</button>
+  </form> -->
+  <form [formGroup]="kycForm" class="reactiveForm" (ngSubmit)="onSubmit($event)">
+    <div class="row">
+      <span>1. Name of the Applicant</span>
+      <div class="form-control">
+        <label>First Name</label>
+        <input type="text" formControlName="firstName">
+      </div>
+      <div class="form-control">
+        <label>Last Name</label>
+        <input type="text" formControlName="lastName">
+      </div>
+    </div>
+    <div class="row">
+      <span>2. Father's/Spouse's Name</span>
+      <div class="form-control">
+        <label>First Name</label>
+        <input type="text" formControlName="fatherFirstName">
+      </div>
+      <div class="form-control">
+        <label>Last Name</label>
+        <input type="text" formControlName="fatherLastName">
+      </div>
+    </div>
+    <div class="row-radio">
+      <div class="form-control">
+        <span>2a. Gender</span>
+        <div class="flexer">
+          <input type="radio" formControlName="gender" value="Male">
+          <label>Male</label>
+        </div>
+        <div class="flexer">
+          <input type="radio" formControlName="gender" value="Female">
+          <label>Female</label>
+        </div>
+      </div>
+      <div class="form-control">
+        <span>2b. Marital Status</span>
+        <div class="flexer">
+          <input type="radio" formControlName="maritalStatus" value="Single">
+          <label>Single</label>
+        </div>
+        <div class="flexer">
+          <input type="radio" formControlName="maritalStatus" value="Married">
+          <label>Married</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <span>2c. Date of Birth</span>
+      <div class="form-control">
+        <label>Date</label>
+        <input type="date" formControlName="dob">
+      </div>
+      <div class="form-control"></div>
+    </div>
+    <div class="row">
+      <span>3. Nationality</span>
+      <div class="form-control">
+        <label>Nationality</label>
+        <select formControlName="nationality">
+          <option value="" selected disabled>Please Select</option>
+          <option [value]="country.code" *ngFor="let country of countries">{{country.name}}</option>
+        </select>
+      </div>
+      <div class="form-control"></div>
+    </div>
+    <div class="row-radio">
+      <div class="form-control">
+        <span>4. Status</span>
+        <div class="flexer">
+          <input type="radio" formControlName="nationalStatus" value="ResidentIndividual">
+          <label>Resident Individual</label>
+        </div>
+        <div class="flexer">
+          <input type="radio" formControlName="nationalStatus" value="NonResident">
+          <label>Non Resident</label>
+        </div>
+        <div class="flexer">
+          <input type="radio" formControlName="nationalStatus" value="ForeignNational">
+          <label>Foreign National</label>
+        </div>
+      </div>
+      <div class="form-control">
+      </div>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  <span *ngFor="let bake of bakeSome">{{bake}}</span>
 </div>

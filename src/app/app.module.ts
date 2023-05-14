@@ -12,6 +12,8 @@ import { ExplorerModule } from './layout/explorer/explorer.module';
 import { WelcomeComponent } from './layout/welcome/welcome.component';
 import { StatusComponent } from './layout/status/status.component';
 import { CodeEditorModule } from '@ngstack/code-editor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,7 @@ import { CodeEditorModule } from '@ngstack/code-editor';
     WelcomeComponent,
     StatusComponent,
   ],
-  imports: [ ExplorerModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, CodeEditorModule.forRoot()],
+  imports: [ ReactiveFormsModule, HttpClientModule, ExplorerModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, CodeEditorModule.forRoot()],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
